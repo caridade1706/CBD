@@ -1,0 +1,44 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.example:AutoComplete >----------------------
+[INFO] Building AutoComplete 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.1.0:java (default-cli) @ AutoComplete ---
+Search for ('Enter' for quit): maria
+Maria
+Mariana
+Mariam
+Mariano
+Mariama
+Marianna
+Mariame
+Mariah
+MariaLuísa
+Search for ('Enter' for quit): ser
+Serena
+Serigne
+Sergiu
+Search for ('Enter' for quit): tar
+Taráz
+Tareak
+Tarcío
+Tarciso
+Taranjit
+Search for ('Enter' for quit): DIO
+Diogo
+Dionísio
+Dionisia
+Dione
+Diofe
+Search for ('Enter' for quit): Alva
+Alvaro
+Alvarino
+Search for ('Enter' for quit):
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  52.684 s
+[INFO] Finished at: 2023-09-22T00:26:54+01:00
+[INFO] ------------------------------------------------------------------------

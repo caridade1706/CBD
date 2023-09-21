@@ -1,0 +1,29 @@
+ping
+set test "It's working!"
+get test
+exit
+set name Tiago
+get name
+strlen name
+append name Gomes
+get name
+getrange name 1 9
+setrange name 1 9
+get name
+rename name nome
+get nome
+get name 
+set name mes
+keys mes
+keys *
+keys m
+keys n
+get test
+expire test 10
+get test
+persist test
+get test
+rediscli_history
+historic
+~/.rediscli_history
+exit

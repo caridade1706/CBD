@@ -1,0 +1,18 @@
+set ex 2
+get ex
+ping
+set nome ford 
+get nome
+append nome focus
+strlen nome
+getrange nome 0 -1
+set year 2000
+rename nome carro
+expire year 30
+strlen year
+ttl year
+persist year
+get year
+ping
+type year
+exit
