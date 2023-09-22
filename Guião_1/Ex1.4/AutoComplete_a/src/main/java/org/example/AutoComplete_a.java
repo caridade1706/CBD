@@ -26,7 +26,7 @@ public class AutoComplete_a {
             String input = sc2.nextLine();
 
             if (!input.isEmpty()) {
-            	//List<String> results = jedis.zrangeByLex(USERS, "[" + search + "*", "[" + search + (char)0xFF);
+
                 Set<String> results = jedis.smembers(USERS);
 
                 for (String result : results) {
