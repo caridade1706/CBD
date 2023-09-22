@@ -29,7 +29,7 @@ public class AutoComplete_b {
                 List<String> results = jedis.zrevrange(USERS, 0, -1);
 
                 for (String result : results) {
-                    if (result.toLowerCase().matches(input.toLowerCase() + "(.*)")) {// could use 'startsWith(input) like in exercise a)
+                    if (result.toLowerCase().matches(input.toLowerCase() + "(.*)")) {// could use 'startsWith(input.toLowerCase()) like in exercise a)
                         System.out.println(result);
                     }
                 }
