@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.example:AutoComplete >----------------------
+[INFO] Building AutoComplete 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.1.0:java (default-cli) @ AutoComplete ---
+-----Menu-----
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 1
+Utilizador: tiago
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 2
+Utilizador: tiago
+Produto: peras
+Quantidade: 4
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 3
+Utilizador: tiago
+Produtos: peras,peras,peras,peras
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 1
+Utilizador: roberto
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 2
+Utilizador: roberto
+Produto: maças
+Quantidade: 10
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 2
+Utilizador: tiago
+Produto: maças
+Quantidade: 5
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 3
+Utilizador: roberto
+Produtos: maças,maças,maças,maças,maças,maças,maças,maças,maças,maças
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 3
+Utilizador: tiago
+Produtos: peras,peras,peras,peras,maças,maças,maças,maças,maças
+Escolha uma opção:
+1. Adicionar utilizador
+2. Adicionar produto
+3. Ver detalhe
+4. Sair
+Digite o número da opção desejada: 4
+ADEUS
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:13 min
+[INFO] Finished at: 2023-09-27T10:41:44+01:00
+[INFO] ------------------------------------------------------------------------
