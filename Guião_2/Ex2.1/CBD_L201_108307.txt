@@ -1,0 +1,357 @@
+# CBD – Lab201 – Tiago Caridade Gomes
+
+# Start MongoDB
+> sudo systemctl start mongod
+
+# View Status
+> sudo systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor prese>
+     Active: active (running) since Tue 2023-10-10 16:45:10 WEST; 34s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 9270 (mongod)
+     Memory: 170.1M
+        CPU: 559ms
+     CGroup: /system.slice/mongod.service
+             └─9270 /usr/bin/mongod --config /etc/mongod.conf
+
+out 10 16:45:10 caridade systemd[1]: Started MongoDB Database Server.
+out 10 16:45:10 caridade mongod[9270]: {"t":{"$date":"2023-10-10T15:45:10.582Z">
+
+# Abrir a shell
+> smongo sh
+
+# Criar ou mudar de Database
+> use [database_name]
+switched to db test
+
+# Consultar a Database a usar
+> db
+
+# Consultar todas as Databases disponíveis
+> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+
+# Inserir documentos
+>db.movie.insertOne({"name":"tutorials point"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6525775381869329796a4d2b")
+}
+
+# Eliminar database
+>db.dropDatabase()
+{ ok: 1, dropped: 'exemplo' }
+
+# Criar uma Collection
+>db.createCollection("mycollection")
+{ "ok" : 1 }
+
+# Visualizar as Collection criadas
+>show collections
+mycollection
+
+# Eliminar uma Collection
+> db.mycollection.drop()
+true
+
+# Para inserir dados numa collection usamos insert() ou save()
+> db.users.insert({
+... _id : ObjectId("507f191e810c19729de860ea"),
+... title: "MongoDB Overview",
+... description: "MongoDB is no sql database",
+... by: "tutorials point",
+... url: "http://www.tutorialspoint.com",
+... tags: ['mongodb', 'database', 'NoSQL'],
+... likes: 100
+... })
+WriteResult({ "nInserted" : 1 })
+
+# Podemos inserir igualmente numa collection um array de documentos
+> db.createCollection("post")
+{ ok: 1 }
+> db.post.insert([
+... 	{
+... 		title: "MongoDB Overview",
+... 		description: "MongoDB is no SQL database",
+... 		by: "tutorials point",
+... 		url: "http://www.tutorialspoint.com",
+... 		tags: ["mongodb", "database", "NoSQL"],
+... 		likes: 100
+... 	},
+... 	{
+... 	title: "NoSQL Database",
+... 	description: "NoSQL database doesn't have tables",
+... 	by: "tutorials point",
+... 	url: "http://www.tutorialspoint.com",
+... 	tags: ["mongodb", "database", "NoSQL"],
+... 	likes: 20,
+... 	comments: [
+... 		{
+... 			user:"user1",
+... 			message: "My first comment",
+... 			dateCreated: new Date(2013,11,10,2,35),
+... 			like: 0
+... 		}
+... 	]
+... }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("65257b5b81869329796a4d2d"),
+    '1': ObjectId("65257b5b81869329796a4d2e")
+  }
+}
+
+
+# Inserir vários documentos na mesma collection 
+> db.empDetails.insertMany(...)
+
+# Método find() devolve os documentos todos da determinada collection
+> db.empDetails.find()
+[
+  {
+    _id: ObjectId("65257c4f81869329796a4d2f"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Date_Of_Birth: '1995-09-26',
+    e_mail: 'radhika_sharma.123@gmail.com',
+    phone: '9848022338'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d30"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Date_Of_Birth: '1995-09-26',
+    e_mail: 'radhika_sharma.123@gmail.com',
+    phone: '9000012345'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d31"),
+    First_Name: 'Rachel',
+    Last_Name: 'Christopher',
+    Date_Of_Birth: '1990-02-16',
+    e_mail: 'Rachel_Christopher.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d32"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Date_Of_Birth: '1990-02-16',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  }
+]
+
+# Método find().prety() devolve o mesmo que o find mas com uma formatação mais amiga à leitura
+
+# O método findOne() devolve o respetivo documento que se procura
+> db.mycol.findOne({title: "MongoDB Overview"})
+{
+  _id: ObjectId("652583ef81869329796a4d33"),
+  title: 'MongoDB Overview',
+  description: 'MongoDB is no SQL database',
+  by: 'tutorials point',
+  url: 'http://www.tutorialspoint.com',
+  tags: [ 'mongodb', 'database', 'NoSQL' ],
+  likes: 100
+}
+
+
+# Também podemos procurar juntamente com uma intrução de seleção $and ou $or
+
+ db.mycol.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+[
+  {
+    _id: ObjectId("652583ef81869329796a4d33"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+
+
+> db.mycol.find({$or:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+[
+  {
+    _id: ObjectId("652583ef81869329796a4d33"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId("652583ef81869329796a4d34"),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate("2013-12-10T02:35:00.000Z"),
+        like: 0
+      }
+    ]
+  }
+]
+
+# As condições de negação também são validas e podem ser usadas juntamento com outras consicionais
+----$nor
+> db.empDetails.find({$nor:[{"First_Name":"Radhika"},{"Last_Name":"Christopher"}]})
+[
+  {
+    _id: ObjectId("65257cfb81869329796a4d32"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Date_Of_Birth: '1990-02-16',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("6527b27a91d43b7a1afd5099"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Age: '24',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  }
+]
+
+---$not
+> db.empDetails.find( { "Age": { $not: { $gt: "25" } } } )
+[
+  {
+    _id: ObjectId("65257c4f81869329796a4d2f"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Date_Of_Birth: '1995-09-26',
+    e_mail: 'radhika_newemail@gmail.com',
+    phone: '9848022338',
+    Age: '00'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d30"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Date_Of_Birth: '1995-09-26',
+    e_mail: 'radhika_sharma.123@gmail.com',
+    phone: '9000012345'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d31"),
+    First_Name: 'Rachel',
+    Last_Name: 'Christopher',
+    Date_Of_Birth: '1990-02-16',
+    e_mail: 'Rachel_Christopher.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("65257cfb81869329796a4d32"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Date_Of_Birth: '1990-02-16',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("6527b27a91d43b7a1afd5097"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Age: '00',
+    e_mail: 'radhika_sharma.123@gmail.com',
+    phone: '9000012345'
+  },
+  {
+    _id: ObjectId("6527b27a91d43b7a1afd5098"),
+    First_Name: 'Rachel',
+    Last_Name: 'Christopher',
+    Age: '00',
+    e_mail: 'Rachel_Christopher.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("6527b27a91d43b7a1afd5099"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Age: '24',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  }
+]
+
+
+# Atualização de determinados Parêmetros 
+> db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial v2'}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+# De modo a ataulizar vários documento é necessário acrescentar multi:true ao comando
+>db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}},{multi:true})
+
+# O save() também pode ser utilizado para a modificação de parâmetros
+
+# Podemos também atualizar dados da seguinte forma
+ db.empDetails.findOneAndUpdate(
+	{First_Name: 'Radhika'},
+	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+)
+{
+	"_id" : ObjectId("5dd6636870fb13eec3963bf5"),
+	"First_Name" : "Radhika",
+	"Last_Name" : "Sharma",
+	"Age" : "30",
+	"e_mail" : "radhika_newemail@gmail.com",
+	"phone" : "9000012345"
+}
+
+# Para a atulização de vários documentos usamos também o updateMany()
+
+
+# Remoção de documentos com o mesmo Parêmetro em questão
+> db.mycol.remove({'title':'New MongoDB Tutorial v2'})
+{ acknowledged: true, deletedCount: 0 }
+
+
+# Para remover todos os documentos
+> db.mycol.remove({})
+
+# Visualização apenas de certo consteudo dos documentos
+> db.mycol.find({},{"title":1,_id:0})
+[ { title: 'New MongoDB Tutorial' }, { title: 'NoSQL Database' } ]
+
+# Visualização com limite de resultados
+> db.mycol.find({},{"title":1,_id:0}).limit(1)
+[ { title: 'New MongoDB Tutorial' } ]
+
+# Visualização de um certo documento avançando os anteriores
+> db.mycol.find({},{"title":1,_id:0}).limit(1).skip(1)
+[ { title: 'NoSQL Database' } ]
+
+
+# Visualização de forma ordenada
+> db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})
+[ { title: 'NoSQL Database' }, { title: 'New MongoDB Tutorial' } ]
+
+
+# Agregação de parâmetros do mesmo tipo
+> db.mycol.aggregate([{$group : {_id : "$by", num_tutorial : {$sum : 1}}}])
+[ { _id: 'tutorials point', num_tutorial: 2 } ]
