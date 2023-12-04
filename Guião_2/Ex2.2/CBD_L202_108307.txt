@@ -1251,34 +1251,52 @@ db.restaurants.find({localidade:{$in:["Staten Island","Queens","Brooklyn"]}},{re
 //     },
 // ...]
 
-// 13. Liste o nome, a localidade, o score e gastronomia dos restaurantes que alcançaram sempre pontuações inferiores ou igual a 3.
-db.restaurants.find({'grades.score':{$lte:3}},{nome:1,localidade:1,gastronomia:1,'grades.score':1,_id:0})
+// 13. Liste o nome, a localidade, o score e gastronomia dos restaurantes que alcançaram sempre pontuações inferiores ou igual a 3. ----------- ESTÁ MAL
+db.restaurants.find({'grades.score':{$not:{$gt:3}}},{nome:1,localidade:1,gastronomia:1,'grades.score':1,_id:0})
 // [
-//   {
-//     localidade: 'Manhattan',
-//     gastronomia: 'Irish',
-//     grades: [ { score: 2 }, { score: 11 }, { score: 12 }, { score: 12 } ],
-//     nome: 'Dj Reynolds Pub And Restaurant'
-//   },
-//   {
-//     localidade: 'Bronx',
-//     gastronomia: 'Bakery',
-//     grades: [
-//       { score: 2 },
-//       { score: 6 },
-//       { score: 10 },
-//       { score: 9 },
-//       { score: 14 }
-//     ],
-//     nome: 'Morris Park Bake Shop'
-//   },
-//   {
-//     localidade: 'Bronx',
-//     gastronomia: 'American',
-//     grades: [ { score: 11 }, { score: 4 }, { score: 3 } ],
-//     nome: 'Wild Asia'
-//   },
-//   ...]
+//  {
+//    localidade: 'Brooklyn',
+//    gastronomia: 'Hamburgers',
+//    grades: [ { score: 2 }, { score: 3 }, { score: 0 } ],
+//    nome: 'White Castle'
+//  },
+//  {
+//    localidade: 'Manhattan',
+//    gastronomia: 'Café/Coffee/Tea',
+//    grades: [ { score: 2 }, { score: 2 }, { score: 2 }, { score: 2 } ],
+//    nome: 'Cafe Madison'
+//  },
+//  {
+//    localidade: 'Manhattan',
+//    gastronomia: 'American',
+//    grades: [ { score: 0 }, { score: 3 }, { score: 2 } ],
+//    nome: 'Citibank Executive Conference Center'
+//  },
+//  {
+//    localidade: 'Manhattan',
+//    gastronomia: 'American',
+//    grades: [ { score: 3 }, { score: 2 }, { score: 2 }, { score: 0 } ],
+//    nome: 'Kenyon & Kenyon Cafeteria'
+//  },
+//  {
+//    localidade: 'Manhattan',
+//    gastronomia: 'American',
+//    grades: [ { score: 2 }, { score: 0 } ],
+//    nome: 'Gold Bar B'
+//  },
+//  {
+//    localidade: 'Manhattan',
+//    gastronomia: 'American',
+//    grades: [ { score: 0 }, { score: 0 }, { score: 2 } ],
+//    nome: 'Circle In The Square Theatre'
+//  },
+//  {
+//    localidade: 'Brooklyn',
+//    gastronomia: 'American',
+//    grades: [ { score: 3 } ],
+//    nome: 'Stand # 210'
+//  }
+//]
 
 //14. Liste o nome e as avaliações dos restaurantes que obtiveram uma avaliação com um grade "A", um score 10 na data "2014-08-11T00: 00: 00Z" (ISODATE).
 db.restaurants.find({grades:{$elemMatch:{date:ISODate("2014-08-11T00:00:00Z"),grade:"A",score:10}}},{nome:1,grades:1,_id:0})
@@ -1478,7 +1496,7 @@ db.restaurants.aggregate([{$unwind: "$grades"},{$project: {dayOfWeek: { $dayOfWe
 //   { numGrades: 529, dayOfWeek: 7 },
 //   { numGrades: 3878, dayOfWeek: 3 },
 //   { numGrades: 2440, dayOfWeek: 6 },
-//   { numGrades: 4118, dayOfWeek: 4 },db.restaurants.aggregate([{$project:{_id:0,nome:1,numGrades:{$size:"$grades"}}},{$sort:{numGrades:-1}},{$limit:3}])
+//   { numGrades: 4118, dayOfWeek: 4 },
 //   { numGrades: 3984, dayOfWeek: 5 },
 //   { numGrades: 3186, dayOfWeek: 2 },
 //   { numGrades: 7, dayOfWeek: 1 }

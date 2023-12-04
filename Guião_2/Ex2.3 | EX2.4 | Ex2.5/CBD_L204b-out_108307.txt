@@ -1,0 +1,30 @@
+Interação
+
+String user1 = "Tiago";
+String user2 = "Roberto
+produtos1.put("cenoura",1);
+produtos1.put("batata",4);
+produtos1.put("alface",6);
+produtos1.put("tomate",6);
+produtos1.put("cebola",1);
+produtos1.put("alho",3);      
+produtos2.put("maça",4);
+produtos2.put("banana",8);
+produtos2.put("laranja",5);   
+produtos2.put("uva",7);
+produtos2.put("maça",1);
+produtos2.put("melancia",2);
+
+Output:
+
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}]}}
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}]}}
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=cenoura, time=1698417661}}]}}
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=batata, time=1698417655}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=cenoura, time=1698417661}}, Document{{produto=cebola, time=1698417664}}]}}
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=tomate, time=1698417658}}, Document{{produto=cenoura, time=1698417661}}, Document{{produto=cebola, time=1698417664}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}]}}
+Document{{_id=653bc46418ed9e303843e475, user=Tiago, produtos=[Document{{produto=cenoura, time=1698417661}}, Document{{produto=cebola, time=1698417664}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alface, time=1698417667}}, Document{{produto=alho, time=1698417670}}, Document{{produto=alho, time=1698417670}}, Document{{produto=alho, time=1698417670}}]}}
+Document{{_id=653bc46a18ed9e303843e476, user=Roberto, produtos=[Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}]}}
+Document{{_id=653bc46a18ed9e303843e476, user=Roberto, produtos=[Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=banana, time=1698417673}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}]}}
+Document{{_id=653bc46a18ed9e303843e476, user=Roberto, produtos=[Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=uva, time=1698417683}}, Document{{produto=melancia, time=1698417693}}, Document{{produto=melancia, time=1698417693}}]}}
+Document{{_id=653bc46a18ed9e303843e476, user=Roberto, produtos=[Document{{produto=melancia, time=1698417693}}, Document{{produto=melancia, time=1698417693}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}]}}
+Document{{_id=653bc46a18ed9e303843e476, user=Roberto, produtos=[Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=laranja, time=1698417703}}, Document{{produto=maça, time=1698417713}}]}}

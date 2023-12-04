@@ -1,0 +1,46 @@
+Interação:
+
+String user1 = "Tiago";
+String user2 = "Roberto";
+produtos1.add("cenoura");
+produtos1.add("batata");
+
+produtos1.add("alface");
+produtos1.add("tomate");
+produtos1.add("cebola");
+produtos1.add("alho");        
+produtos1.add("maça");
+produtos1.add("batata");
+produtos1.add("batata");
+produtos1.add("batata");
+produtos2.add("maça");
+produtos2.add("banana");
+produtos2.add("laranja");   
+produtos2.add("uva");
+produtos2.add("maça");
+produtos2.add("melancia");
+produtos2.add("melão");
+produtos2.add("maça");
+produtos2.add("morango");
+
+Output:
+
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=cenoura, time=1698417431}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=cenoura, time=1698417431}}, Document{{produto=batata, time=1698417434}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=cenoura, time=1698417431}}, Document{{produto=batata, time=1698417434}}, Document{{produto=alface, time=1698417437}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=cenoura, time=1698417431}}, Document{{produto=batata, time=1698417434}}, Document{{produto=alface, time=1698417437}}, Document{{produto=tomate, time=1698417440}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=batata, time=1698417434}}, Document{{produto=alface, time=1698417437}}, Document{{produto=tomate, time=1698417440}}, Document{{produto=cebola, time=1698417443}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=alface, time=1698417437}}, Document{{produto=tomate, time=1698417440}}, Document{{produto=cebola, time=1698417443}}, Document{{produto=alho, time=1698417446}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=tomate, time=1698417440}}, Document{{produto=cebola, time=1698417443}}, Document{{produto=alho, time=1698417446}}, Document{{produto=maça, time=1698417449}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=cebola, time=1698417443}}, Document{{produto=alho, time=1698417446}}, Document{{produto=maça, time=1698417449}}, Document{{produto=batata, time=1698417452}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=alho, time=1698417446}}, Document{{produto=maça, time=1698417449}}, Document{{produto=batata, time=1698417452}}, Document{{produto=batata, time=1698417455}}]}}
+Document{{_id=653bcae51660887d7d52ee2d, user=Tiago, produtos=[Document{{produto=maça, time=1698417449}}, Document{{produto=batata, time=1698417452}}, Document{{produto=batata, time=1698417455}}, Document{{produto=batata, time=1698417458}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=maça, time=1698417461}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=maça, time=1698417461}}, Document{{produto=banana, time=1698417471}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=banana, time=1698417471}}, Document{{produto=laranja, time=1698417481}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=laranja, time=1698417481}}, Document{{produto=uva, time=1698417491}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=uva, time=1698417491}}, Document{{produto=maça, time=1698417501}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=maça, time=1698417501}}, Document{{produto=melancia, time=1698417511}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=melancia, time=1698417511}}, Document{{produto=melão, time=1698417521}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=melão, time=1698417521}}, Document{{produto=maça, time=1698417531}}]}}
+Document{{_id=653bcaef1660887d7d52ee2e, user=Roberto, produtos=[Document{{produto=maça, time=1698417531}}, Document{{produto=morango, time=1698417541}}]}}
