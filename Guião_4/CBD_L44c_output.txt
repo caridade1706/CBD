@@ -1,0 +1,123 @@
+1 - Listar todas as pessoas que participaram de um evento específico
+Record<{p.nome: "Marta Pereira"}>
+Record<{p.nome: "Emiko Ribeiro"}>
+Record<{p.nome: "Marta Martins"}>
+Record<{p.nome: "Alice Lima"}>
+Record<{p.nome: "Maria Lopes"}>
+Record<{p.nome: "Maria Pinto"}>
+Record<{p.nome: "Olga Gonçalves"}>
+Record<{p.nome: "Tiago Lobo"}>
+
+2 - Contar quantos eventos diferentes cada empresa organizou
+Record<{emp.nome: "Indústrias", num_eventos: 5}>
+Record<{emp.nome: "Sistemas", num_eventos: 7}>
+Record<{emp.nome: "Consultoria", num_eventos: 5}>
+Record<{emp.nome: "Tech", num_eventos: 4}>
+Record<{emp.nome: "Soluções", num_eventos: 9}>
+Record<{emp.nome: "Corp", num_eventos: 3}>
+Record<{emp.nome: "Produtos", num_eventos: 6}>
+Record<{emp.nome: "Conceitos", num_eventos: 12}>
+Record<{emp.nome: "Inovações", num_eventos: 2}>
+
+3 - Listar eventos que não têm participantes
+Record<{e: node<1673>}>
+Record<{e: node<1674>}>
+Record<{e: node<1675>}>
+Record<{e: node<1676>}>
+Record<{e: node<1677>}>
+Record<{e: node<1678>}>
+Record<{e: node<1679>}>
+Record<{e: node<1683>}>
+Record<{e: node<1684>}>
+Record<{e: node<1686>}>
+Record<{e: node<1687>}>
+Record<{e: node<1688>}>
+Record<{e: node<1689>}>
+Record<{e: node<1690>}>
+Record<{e: node<1692>}>
+Record<{e: node<1693>}>
+Record<{e: node<1695>}>
+Record<{e: node<1696>}>
+Record<{e: node<1698>}>
+Record<{e: node<1699>}>
+Record<{e: node<1700>}>
+Record<{e: node<1702>}>
+Record<{e: node<1703>}>
+Record<{e: node<1704>}>
+Record<{e: node<1705>}>
+Record<{e: node<1706>}>
+Record<{e: node<1708>}>
+Record<{e: node<1709>}>
+Record<{e: node<1710>}>
+Record<{e: node<1712>}>
+Record<{e: node<1713>}>
+Record<{e: node<1714>}>
+Record<{e: node<1717>}>
+Record<{e: node<1719>}>
+Record<{e: node<1720>}>
+Record<{e: node<1723>}>
+Record<{e: node<1724>}>
+Record<{e: node<1725>}>
+Record<{e: node<1726>}>
+Record<{e: node<1727>}>
+Record<{e: node<1728>}>
+Record<{e: node<1729>}>
+Record<{e: node<1730>}>
+Record<{e: node<1732>}>
+Record<{e: node<1735>}>
+Record<{e: node<1737>}>
+Record<{e: node<1738>}>
+Record<{e: node<1739>}>
+Record<{e: node<1746>}>
+Record<{e: node<1747>}>
+Record<{e: node<1748>}>
+Record<{e: node<1750>}>
+Record<{e: node<1751>}>
+Record<{e: node<1753>}>
+Record<{e: node<1754>}>
+Record<{e: node<1757>}>
+Record<{e: node<1758>}>
+Record<{e: node<1761>}>
+Record<{e: node<1762>}>
+Record<{e: node<1763>}>
+Record<{e: node<1764>}>
+Record<{e: node<1766>}>
+Record<{e: node<1767>}>
+Record<{e: node<1768>}>
+Record<{e: node<1769>}>
+Record<{e: node<1773>}>
+
+4 - Encontrar todas as empresas que patrocinam um evento específico
+Record<{emp.nome: "Corp"}>
+Record<{emp.nome: "Corp"}>
+Record<{emp.nome: "Conceitos"}>
+
+5 - Listar pessoas que participam de mais de N eventos
+Record<{p.nome: "Maria Pinto", num_eventos: 2}>
+Record<{p.nome: "Tiago Lobo", num_eventos: 2}>
+Record<{p.nome: "Carlos Gonçalves", num_eventos: 2}>
+
+6 - Encontrar eventos organizados e patrocinados pela mesma empresa
+Record<{emp.nome: "Produtos", ev.nome: "Expo"}>
+Record<{emp.nome: "Soluções", ev.nome: "Fórum"}>
+Record<{emp.nome: "Inovações", ev.nome: "Webinar"}>
+
+7 - Listar pessoas com mais de N conexões
+Record<{p.nome: "Maria Silva", num_conexoes: 5}>
+Record<{p.nome: "Rodrigo Lobo", num_conexoes: 5}>
+Record<{p.nome: "João Ribeiro", num_conexoes: 5}>
+Record<{p.nome: "Hassan Martins", num_conexoes: 5}>
+
+8 - Listar empresas que patrocinaram mais de N eventos
+Record<{emp.nome: "Conceitos", num_eventos: 2}>
+
+9 - Listar pessoas que participaram de eventos de uma empresa específica
+Record<{p.nome: "Aisha Lopes", ev.nome: "Feira"}>
+Record<{p.nome: "Maria Pinto", ev.nome: "Workshop"}>
+Record<{p.nome: "Chen Carvalho", ev.nome: "Feira"}>
+Record<{p.nome: "Maria Lobo", ev.nome: "Conferência"}>
+Record<{p.nome: "Carlos Araújo", ev.nome: "Workshop"}>
+
+10 - Encontrar a pessoa que participa do maior número de eventos
+Record<{p.nome: "Maria Pinto", num_eventos: 2}>
+
